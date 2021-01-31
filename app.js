@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 const path = require('path');
 const express = require('express');
 const videos = require('./src/videos');

@@ -1,3 +1,13 @@
 <%- include('header') -%>
-hallo
+    <header>
+        <h1>Fræðslumyndbandaleigan</h1>
+    </header>
+    <main>
+        <div class="grid">
+            <% categories.forEach((category) => { %>
+                <%- include('videoGroup', {group: category, videos: videos}); -%> 
+            <% }); %>
+        </div>
+    </main>
+    <%- include('videoGroup', {group: {title: 'Tengd myndbönd', videos:video.related}, videos: videos}) -%>  
 <%- include('footer') -%>

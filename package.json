@@ -5,14 +5,25 @@
   "main": ".eslintrc.js",
   "dependencies": {
     "ejs": "^3.1.5",
-    "eslint": "^7.18.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7",
-    "stylelint": "^13.9.0"
+    "express": "^4.17.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "stylelint": "^13.9.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:eslint": "eslint app.js ./src/*.js --fix",
+    "test:stylelint": "stylelint ./styles/*.scss --syntax scss --fix",
+    "sass": "node-sass --source-map-embed .styles/styles.scss ./public/styles.css",
+    "test": "concurrently npm:test:*",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

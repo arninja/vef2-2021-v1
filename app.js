@@ -11,8 +11,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', videos);
 
-
-
 /**
  * Middleware sem sér um 404 villur.
  *
@@ -44,11 +42,11 @@ function errorHandler(err, req, res, next) { // eslint-disable-line
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-//Útbúum breytur fyrir hostname og port og skilgreinum þær 
+// Útbúum breytur fyrir hostname og port og skilgreinum þær
 const hostname = '127.0.0.1';
 const port = 3000;
 
-//Prentum upplýsingarnar um hvar verkefnið sé keyrt
+// Prentum upplýsingarnar um hvar verkefnið sé keyrt
 app.listen(port, hostname, () => {
   console.info(`Server running at http://${hostname}:${port}/`);
 });

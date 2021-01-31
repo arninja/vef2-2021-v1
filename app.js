@@ -20,7 +20,7 @@ app.use('/', videos);
  */
 function notFoundHandler(req, res, next) { // eslint-disable-line
   const title = 'Síða fannst ekki';
-  const message = 'Efnið sem þú sóttist eftir er ekki til';
+  const message = 'Efnið sem þú sóttist eftir að finna hér er því miður er ekki til';
   res.status(404).render('error', { title, message });
 }
 

@@ -1,3 +1,38 @@
 <%- include('header') -%>
-    
+    <main>
+        <section class="video-view grid">
+            <h1><%= video.title %></h1>
+            <div class="video-container">
+                <video id="myVideo">
+                    <source src= "<%= video.video %>" type= "video/mp4"/>
+                </video>
+                <div class="video-overlay" id="overlay">
+                    <img class="video-playbutton" src="img/play.svg">
+                </div>
+            </div>
+            <div class="video-controls">
+                <button class="video-controls__button">
+                    <img class="video-controls__img" src="img/back.svg" id="rewind">
+                </button>
+                <button class="video-controls__button">
+                    <img class="video-controls__img" src="img/play.svg" id="play">
+                    <img class="video-controls__img button__active" src="img/pause.svg" id="pause">
+                </button>
+                <button class="video-controls__button">
+                    <img class="video-controls__img button__active" src="img/unmute.svg" id="unmute">
+                    <img class="video-controls__img" src="img/mute.svg" id="mute">
+                </button>
+                <button class="video-controls__button">
+                    <img class="video-controls__img" src="img/fullscreen.svg" id="fullScreen">
+                </button>
+                <button class="video-controls__button">
+                    <img class="video-controls__img" src="img/next.svg" id="forward">
+                </button>
+            </div>
+            <div class="video-description">
+                <p><%= video.description %></p>
+            </div>
+            <a href="/">Til baka</a>
+        </section>
+    </main>
 <%- include('footer') -%>

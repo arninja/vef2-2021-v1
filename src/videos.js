@@ -19,9 +19,9 @@ function catchErrors(fn) {
 /**
  * Les gögn async úr JSON skrá.
  *
- * @returns {object} Gögnum úr JSON skrá
+ * @returns {object} Gögn úr JSON skrá
  */
-async function readList() {
+async function readJSON() {
   // Byrjum á að lesa skjalið (videos.json) sem staðsett er í möppunni fyrir neðan
   const file = await readFileAsync('./videos.json');
   // Notum JSON til vinna skrárnar
@@ -31,45 +31,65 @@ async function readList() {
 }
 
 /**
- * Route handler sem birtir lista af myndböndum.
+ * Route handler sem birtir heimasíðuna.
  *
  * @param {object} req Request hlutur
  * @param {object} res Response hlutur
  */
-async function list(req, res) {
+async function videoHome(req, res) {
   const title = 'Fræðslumyndbandaleigan';
-  const json = await readList();
+  const json = await readJSON();
+  //Skilgreinum listana sem við ætlum að lesa úr JSON skjalinu
   const { videos, categories } = json;
-
+  //The res.render() function is used to render a view and sends the rendered HTML string to the client.
   res.render('videos', { title, videos, categories });
 }
 
+async function videoSearchFor(id, videos){
+  let _video;
+  const _id = Number(id);
+  videos.forEach(video => {
+    if(video.id == _id){
+      _video = video;
+    }
+  });
+    if(_video == video){
+      return _video;
+    }
+    else{
+      return false;
+    }
+}
+
 /**
- * Route handler sem birtir myndband. Ef myndband finnst ekki í JSON skrá
- * er kallað í next() sem mun enda í 404 handler.
+ * Route handler sem birtir videosíðu
+ * Ef efni finnst ekki fer beiðnin í 404 handler
  *
  * @param {object} req Request hlutur
  * @param {object} res Response hlutur
  * @param {function} next Næsta middleware
  */
-async function video(req, res, next) {
+async function videoPage(req, res, next) {
   const { slug } = req.params;
-
-  const json = await readList();
-  const { videos } = json;
-
-  const foundVideo = videos.find((a) => a.slug === slug);
-
-  if (!foundVideo) {
-    // Sendum í 404 handler
+  if (slug != 'video'){
     return next();
   }
 
-  const { title } = foundVideo;
+  const json = await readJSON();
+  const { videos } = json;
+  const { id } = req.query;
+  const videoFound = videoSearchFor(videos, id);
 
-  return res.render('video', { title, video: foundVideo });
+  if(!videoFound){
+    next();
+  }
+
+  const { title } = videoFound;
+
+  return res.render('video', { title, videoFound, videos });
 }
-router.get('/', catchErrors(list));
-router.get('/:slug', catchErrors(video));
+
+router.get('/', catchErrors(videoHome));
+router.get('/:slug', catchErrors(videoPage));
 
 module.exports = router;

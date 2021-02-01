@@ -44,8 +44,13 @@ async function videoHome(req, res) {
   //The res.render() function is used to render a view and sends the rendered HTML string to the client.
   res.render('videos', { title, videos, categories });
 }
-
-async function videoSearchFor(id, videos){
+/**
+ * Leitar í JSON skjali af id, ef id er til skilar skilar hún video annars false
+ * 
+ * @param {*} id Auðkenni myndbands í videos
+ * @param {*} videos Listi myndbanda þar sem hvert og eitt myndband hefur tilteknar upplýsingar
+ */
+async function videoSearchFor(videos, id){
   let _video;
   const _id = Number(id);
   videos.forEach(video => {

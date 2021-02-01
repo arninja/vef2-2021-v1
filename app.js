@@ -1,7 +1,7 @@
-
 const path = require('path');
 const express = require('express');
 const videos = require('./src/videos');
+
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +34,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
 function errorHandler(err, req, res, next) { // eslint-disable-line
   console.error(err);
   const title = 'Villa kom upp';
-  const message = '';
+  const message = 'Smá tæknivandamál okkar megin, afsakið';
   res.status(500).render('error', { title, message });
 }
 
@@ -49,3 +49,5 @@ const port = 3000;
 app.listen(port, hostname, () => {
   console.info(`Server running at http://${hostname}:${port}/`);
 });
+
+//<!--<%- include('videoGroup', {group: {title: 'Tengd myndbönd', foundVideos:video.related}, foundVideos: foundVideos}) -%>-->

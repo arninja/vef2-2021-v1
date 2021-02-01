@@ -4,10 +4,9 @@
     </header>
     <main>
         <div class="grid">
-            <% categories.forEach((category) => { %>
-                <%- include('videoGroup', {group: category, videos: videos}); -%> 
-            <% }); %>
-        </div>
-    </main>
-    <%- include('videoGroup', {group: {title: 'Tengd myndbönd', videos:video.related}, videos: videos}) -%>  
+            <%# categories.forEach((category) => { %>
+                <%#- include('videoGroup', {group: category, videos: videos}); -%> 
+            <%# }); %>
+        </div> 
+    </main>  
 <%- include('footer') -%>

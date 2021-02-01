@@ -39,9 +39,9 @@ async function readList() {
 async function list(req, res) {
   const title = 'Fræðslumyndbandaleigan';
   const json = await readList();
-  const { videos } = json;
+  const { videos, categories } = json;
 
-  res.render('videos', { title, videos });
+  res.render('videos', { title, videos, categories });
 }
 
 /**

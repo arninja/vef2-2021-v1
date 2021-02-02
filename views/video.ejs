@@ -1,10 +1,10 @@
 <%- include('header') -%>
     <main>
         <section class="video-view grid">
-            <h1><%= videoFound.title %></h1>
+            <h1><%= video.title %></h1>
             <div class="video-container">
                 <video id="myVideo">
-                    <source src= "<%= videoFound.video %>" type= "video/mp4"/>
+                    <source src= "<%= video.video %>" type= "video/mp4"/>
                 </video>
                 <div class="video-overlay" id="overlay">
                     <img class="video-playbutton" src="img/play.svg">
@@ -30,9 +30,10 @@
                 </button>
             </div>
             <div class="video-description">
-                <p><%= videoFound.description %></p>
+                <p><%= video.description %></p>
             </div>
             <a href="/">Til baka</a>
         </section>
     </main>
+    <%- include('videoCategory', {cat: {title: 'Tengd myndbönd', videos:video.related}, videos: videos}) -%>
 <%- include('footer') -%>

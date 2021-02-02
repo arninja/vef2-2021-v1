@@ -31,39 +31,39 @@ async function readJSON() {
 }
 
 /**
- * Route handler sem birtir heimasíðuna.
+ * Route handler heimasíðu myndbanda
  *
- * @param {object} req Request hlutur
- * @param {object} res Response hlutur
+ * @param {*} res Response hlutur
  */
 async function videoHome(req, res) {
   const title = 'Fræðslumyndbandaleigan';
   const json = await readJSON();
-  //Skilgreinum listana sem við ætlum að lesa úr JSON skjalinu
+  // Skilgreinum listana sem við ætlum að lesa úr JSON skjalinu
   const { videos, categories } = json;
-  //The res.render() function is used to render a view and sends the rendered HTML string to the client.
-  res.render('videos', { title, videos, categories });
+  /**  The res.render() function is used to render a view and sends the
+  *    rendered HTML string to the client.
+  */
+  return res.render('videos', { title, videos, categories });
 }
 /**
  * Leitar í JSON skjali af id, ef id er til skilar skilar hún video annars false
- * 
+ *
  * @param {*} id Auðkenni myndbands í videos
  * @param {*} videos Listi myndbanda þar sem hvert og eitt myndband hefur tilteknar upplýsingar
  */
-async function videoSearchFor(videos, id){
-  let _video;
-  const _id = Number(id);
-  videos.forEach(video => {
-    if(video.id == _id){
-      _video = video;
+async function videoSearchFor(videos, id) {
+  let videoN;
+  const idN = Number(id);
+  videos.forEach((video) => {
+    if (video.id === idN) {
+      videoN = video;
     }
   });
-    if(_video == video){
-      return _video;
-    }
-    else{
-      return false;
-    }
+  if (videoN) {
+    return videoN;
+  }
+
+  return false;
 }
 
 /**
@@ -76,21 +76,22 @@ async function videoSearchFor(videos, id){
  */
 async function videoPage(req, res, next) {
   const { slug } = req.params;
-  if (slug != 'videoFound'){
+  if (slug !== 'video') {
     return next();
   }
 
   const json = await readJSON();
   const { videos } = json;
   const { id } = req.query;
-  const videoFound = videoSearchFor(videos, id);
+  const video = await videoSearchFor(videos, id);
 
-  if(!videoFound){
+  if (!video) {
     next();
   }
 
-  const { title } = videoFound;
-  return res.render('videoFound', { title, videoFound, videos });
+  const { title } = video;
+  res.render('video', { title, video, videos });
+  return 0;
 }
 
 router.get('/', catchErrors(videoHome));

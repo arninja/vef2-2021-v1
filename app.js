@@ -6,6 +6,7 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.locals.util = require('./src/util');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', videos);
@@ -45,9 +46,7 @@ app.use(errorHandler);
 const hostname = '127.0.0.1';
 const port = 3000;
 
-// Prentum upplýsingarnar um hvar verkefnið sé keyrt
+// Skilum upplýsingunum um hvar verkefnið sé keyrt með console (til aðstoðar)
 app.listen(port, hostname, () => {
   console.info(`Server running at http://${hostname}:${port}/`);
 });
-
-//<!--<%- include('videoGroup', {group: {title: 'Tengd myndbönd', foundVideos:video.related}, foundVideos: foundVideos}) -%>-->

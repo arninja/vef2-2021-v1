@@ -2,7 +2,7 @@
   "name": "vef2-2021-v1",
   "version": "1.0.0",
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
-  "main": ".eslintrc.js",
+  "main": "app.js",
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1"
@@ -29,7 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/arninja/vef2-2021-v1.git"
   },
-  "author": "",
+  "author": "Arnar Ingi Njarðarson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/arninja/vef2-2021-v1/issues"

@@ -53,12 +53,12 @@ async function videoHome(req, res) {
 async function videoSearchFor(videos, id){
   let _video;
   const _id = Number(id);
-  videos.forEach(video => {
+  videos.forEach(videoFound => {
     if(video.id == _id){
-      _video = video;
+      _video = videoFound;
     }
   });
-    if(_video == video){
+    if(_video == videoFound){
       return _video;
     }
     else{
@@ -76,7 +76,7 @@ async function videoSearchFor(videos, id){
  */
 async function videoPage(req, res, next) {
   const { slug } = req.params;
-  if (slug != 'video'){
+  if (slug != 'videoFound'){
     return next();
   }
 

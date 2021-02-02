@@ -90,8 +90,7 @@ async function videoPage(req, res, next) {
   }
 
   const { title } = videoFound;
-
-  return res.render('video', { title, videoFound, videos });
+  return res.render('videoFound', { title, videoFound, videos });
 }
 
 router.get('/', catchErrors(videoHome));

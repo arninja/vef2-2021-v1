@@ -5,7 +5,7 @@
 {
   "Nafn": "Arnar Ingi Njarðarson"
   "Netfang": "ain1@hi.is"
-  "Kennitala": 0507972609
+  "Kennitala": "0507972609"
 }
 ```
 Til að keyra verkefni skal:

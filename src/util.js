@@ -37,5 +37,4 @@ function formatTimeAdd(seconds) {
   const s = (seconds % 60);
   return `${m}:${s < 10 ? 0 : ' '}${s}`;
 }
-
 module.exports = { formatTimeAdd, formatTime };

@@ -1,11 +1,11 @@
 # Vefforritun 2 2021 - Verkefni 1
 
-### Nemandi
+## Nemandi
 
 - Nafn: Arnar Ingi Njarðarson
 - Netfang: ain1@hi.is
 - Kennitala: 050797-2609
-- Github notendanafn: arninja
+- Github: arninja
 
 ### Mikilvægar upplýsingar
 
@@ -34,9 +34,37 @@
 3. **public/img mappan kom ekki með þegar ég klónaði verkefnið fyrst**
 
    1. Veit ekki hvort Óli hefur gleymt að láta möppuna inn fyrst eða að ég hafi óvart eytt henni.
-   2. Þar sem ég fæ ekki útlitið inn í verkefnið geri ég mér ekki grein fyrir því hvort þetta hafi áhrif á verkefnið. Ég færði möppuna inn um leið og ég fékk villur við vinnu á ejs skrám (undir views).
+   2. Þar sem ég fæ ekki útlitið inn í verkefnið geri ég mér ekki grein fyrir því hvort þetta hafi áhrif á verkefnið. Ég færði möppuna inn um leið og ég fékk villur við vinnu á ejs skrám, undir views.
 
-### Verkefnislýsing
+## Útfærsla
+
+*Fyrirlesa skal lesa _asynchronously_ af disk með callbacks, promises eða `async await`. Nota þarf `fs` pakkann í node.*
+
+- Ég leysti þetta í `src/videos.js` skránni, notaðist við föll úr [Sýnilausn á verkefni 1 2019](https://github.com/vefforritun/vef2-2019-v1-synilausn) og breytti sumum nöfnum (`videoPage()`, `videoHome()`, `readJSON()`, `catchErrors(fn)`)
+- Loks bjó ég til videoSearchFor(videos, id) fall sem leitar að tilteknu id. 
+
+*Notast skal við [EJS template](https://github.com/mde/ejs) til að útbúa HTML. Útbúa skal `header.ejs` og `footer.ejs` sem önnur template nota. `views/` mappa ætti að innihalda template skrár.*
+
+- Notaðist við uppsetningu á eftirfarandi [repo](https://github.com/vefforritun/vef2-2019-v1-synilausn/tree/master/views) (fyrir error.ejs, `footer.ejs`, `header.ejs`, `video.ejs` og `videos.ejs`) og nýtti upplýsingarnar úr [H2 verkefni sem ég fékk](https://github.com/Gitcelo/vef1-2020-h2)
+
+*Setja skal upp villumeðhöndlun fyrir almennar villur og ef beðið er um slóð sem ekki er til (404). Skilaboð skulu birt notanda um hvað gerðist („Síða fannst ekki“ – „Villa kom upp“).*
+
+- Sjá `notFoundHandler(req, res, next)` og `errorHandler(err, req, res, next)` í `app.js`
+- Sjá `catchErrors(fn)`
+- Öll þessi föll voru tekin úr [sýnilausn á verkefni 1 2019](https://github.com/vefforritun/vef2-2019-v1-synilausn)
+
+
+`app.js` skal setja upp Express vefþjón en virkni fyrir myndbönd skal útfærð í `src/videos.js`.
+
+Nota skal `app.locals` til að gera föll aðgengileg í EJS template til að forma aldur og tíma lengd. Þau ættu að eiga heima undir `./src`.
+
+`public/` inniheldur þau gögn sem ættu að vera aðgengileg með _static middleware_ í express. CSS ætti að vera geymt í þessari möppu. `public/videos/` inniheldur myndir og video sem `videos.json` vísar í.
+
+Öll dependency skulu skráð í `package.json` sem `devDependency` eða `dependency`, eftir því hvað við á.
+
+`npm start` skal keyra upp vefþjón á `localhost` porti `3000`.
+
+Gott getur verið að setja upp `dev` script sem keyrir `nodemon` ásamt Sass virkni ef það er notað.
 
 
 * `npm install` keyrt fyrst sem sækir öll dependency

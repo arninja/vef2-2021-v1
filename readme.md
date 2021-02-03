@@ -7,7 +7,7 @@
 - Kennitala: 050797-2609
 - Github: arninja
 
-### Mikilvægar upplýsingar
+## Mikilvægar upplýsingar
 
 Óli tók það fram að nemendur mættu hjálpast að með útfærslu á útliti (CSS/SASS).
 

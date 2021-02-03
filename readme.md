@@ -15,7 +15,7 @@
 
 **Meirihluti** nemenda í áfanganum (núna) tóku **Vefforritun 1 á síðasta misseri**. Þau hafa beinan aðgang að sinni lausn frá árinu á undan **en ekki þeir nemendur sem tóku ekki áfangann það árið**. Því spurðist ég fyrir hvort ég gæti fengið aðgang að H2 verkefnislausn frá nemanda sem tók áfangann í fyrra. Það tók sinn tíma að finna nemanda en að lokum tókst það. Jóhannes Kári Sólmundarson nemandi í þessu námskeiði veitti mér aðgang að H2 sýnilausn sýns hóps og gaf mér leyfi til að nota CSS/SASS þaðan með því skilyrði að ég myndi láta vita af því (sem ég er að gera núna).
 
-Því notaðist ég við eftirfarandi [repo](https://github.com/Gitcelo/vef1-2020-h2) mér til aðstoðar (svo ég þyrfti ekki að gera allt frá grunni).
+Því notaðist ég við eftirfarandi [repo](https://github.com/Gitcelo/vef1-2020-h2) mér til aðstoðar (svo ég þyrfti ekki að gera H2 frá grunni).
 
 ## Vandamál sem komu upp
 

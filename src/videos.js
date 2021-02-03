@@ -49,8 +49,10 @@ async function videoHome(req, res) {
   */
   return res.render('videos', { title, videos, categories });
 }
+
 /**
  * Leitar í JSON skjali af id ef hún finnur það skilast id annars false
+ * Bætt við
  *
  * @param {*} id Auðkenni myndbands í videos
  * @param {*} videos Listi myndbanda þar sem hvert og eitt myndband hefur tilteknar upplýsingar
@@ -73,7 +75,8 @@ async function videoSearchFor(videos, id) {
 /**
  * Route handler sem birtir videosíðu
  * Ef efni finnst ekki fer beiðnin í 404 handler
- * Tekið úr sýnilausn 2019 notaði slug til að finna video
+ * Tekið úr sýnilausn 2019 
+ * notaði slug til að finna video
  *
  * @param {object} req Request hlutur
  * @param {object} res Response hlutur

@@ -14,6 +14,7 @@ app.use('/', videos);
 
 /**
  * Middleware sem sér um 404 villur.
+ * Tekið úr sýnilausn 2019
  *
  * @param {object} req Request hlutur
  * @param {object} res Response hlutur
@@ -27,6 +28,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
 
 /**
  * Middleware sem sér um villumeðhöndlun.
+ * Tekið úr sýnilausn 2019
  *
  * @param {object} err Villa sem kom upp
  * @param {object} req Request hlutur

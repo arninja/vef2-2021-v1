@@ -17,7 +17,7 @@
 
 Því notaðist ég við eftirfarandi [repo](https://github.com/Gitcelo/vef1-2020-h2) mér til aðstoðar (svo ég þyrfti ekki að gera allt frá grunni).
 
-### Vandamál sem ég rakst á við vinnu verkefnisins
+## Vandamál sem ég rakst á við vinnu verkefnisins
 
 1. **Github vandamál**
 
@@ -51,7 +51,7 @@
 
 - Sjá `notFoundHandler(req, res, next)` og `errorHandler(err, req, res, next)` í `app.js`
 - Sjá `catchErrors(fn)`
-- Öll þessi föll voru tekin úr [sýnilausn á verkefni 1 2019](https://github.com/vefforritun/vef2-2019-v1-synilausn)
+- Öll þessi föll voru fengin úr sýnilausn á verkefni 1 í Vefforitun 2 [2019](https://github.com/vefforritun/vef2-2019-v1-synilausn) sem Óli benti okkur á
 
 
 `app.js` skal setja upp Express vefþjón en virkni fyrir myndbönd skal útfærð í `src/videos.js`.

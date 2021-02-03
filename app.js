@@ -6,6 +6,7 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// App locals
 app.locals.util = require('./src/util');
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,7 +34,7 @@ function notFoundHandler(req, res, next) { // eslint-disable-line
  * @param {function} next Næsta middleware
  */
 function errorHandler(err, req, res, next) { // eslint-disable-line
-  console.error(err);
+  // console.error(err);
   const title = 'Villa kom upp';
   const message = 'Smá tæknivandamál okkar megin, afsakið';
   res.status(500).render('error', { title, message });
@@ -48,5 +49,6 @@ const port = 3000;
 
 // Skilum upplýsingunum um hvar verkefnið sé keyrt með console (til aðstoðar)
 app.listen(port, hostname, () => {
+  // Þetta er warning sem kemur upp í npm testinu... Fínst fínt að hafa þetta... 
   console.info(`Server running at http://${hostname}:${port}/`);
 });

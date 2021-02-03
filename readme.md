@@ -74,14 +74,14 @@
 
 *`npm start` skal keyra upp vefþjón á `localhost` porti `3000`.*
 
-- Notaði `console.info(`Server running at http://${hostname}:${port}/`);` til að prenta út slóðina, tók hana út svo npm test keyrir rétt. Hér er [linkur](http://127.0.0.1:3000/) á slóðina eftir `npm start`
+- Notaði `console.info(`Server running at http://${hostname}:${port}/`);` til að prenta út slóðina, tók hana út svo npm test keyrir rétt án warning. Hér er [linkur](http://127.0.0.1:3000/) á slóðina eftir `npm start`
 
 ## Fyrir yfirferð á verkefninu
 
-  `npm install` keyrt fyrst sem sækir öll dependency
-  `npm start` á að keyra upp express vefþjón á porti `3000`
-  `npm test` sem á að keyra eslint og stylelint, og sýna engar villur
+- `npm install` keyrt fyrst sem sækir öll dependency
+- `npm start` á að keyra upp express vefþjón á porti `3000`
+- `npm test` sem á að keyra eslint og stylelint, og sýna engar villur
 
 ## Yrði þakklátur fyrir
 
-Að dæmatímakennari geti sagt mér hvað mér yfirsást varðandi CSS/SASS virknina
+Að dæmatímakennari geti sagt mér hvað mér yfirsást varðandi CSS/SASS virknina.
